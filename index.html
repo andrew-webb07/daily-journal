@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daily-Journal</title>
+    <link rel="stylesheet" href="styles/main.css" />
+  </head>
+  <body>
+    <!-- Shows the Logo and Title of Andrew's Daily-Journal -->
+    <header class="title">
+      <img src="" alt="logo" />
+      <h1>Andrew Webb's Daily-Journal</h1>
+    </header>
+
+    <main class="container">
+      <h2>Daily Journal</h2>
+      <!-- The Journal Entry Form Box -->
+      <form class="entryForm">
+        <!-- Date entry -->
+        <fieldset class="entryForm__column">
+          <label for="entryDate">Date</label>
+          <input type="date" name="entryDate" class="entryForm__date" />
+        </fieldset>
+        <!-- Basic Concepts Covered that day -->
+        <fieldset class="entryForm__column">
+          <label for="entryConcepts">Concepts Covered</label>
+          <input type="text" name="entryConcepts" class="entryForm__concepts" />
+        </fieldset>
+        <!-- Descprition of learning in detail -->
+        <fieldset class="entryForm__column">
+            <label for="entryJournal">Journal Entry</label>
+            <input type="text" name="entryJournal" class="entryForm__journal">
+        </fieldset>
+        <!-- Your overall mood for the day -->
+        <fieldset class="entryForm__column">
+            <label for="entryMood">Mood for the day</label>
+            <select for="entryMood">
+                <option value="happy">happy</option>
+                <option value="sad">sad</option>
+                <option value="frustrated">frustrated</option>
+                <option value="confused">confused</option>
+                <option value="tired">tired</option>
+                <option value="motivated">motivated</option>
+                <option value="ok">ok</option>
+            </select>
+        </fieldset>
+        <!-- Button that stores Journal Entry -->
+            <button for="entryRecord">Record Journal Entry</button>
+      </form>
+
+      <!-- <section class="entryForm__date-field"></section>
+      <section class="entryForm__concepts"></section>
+      <section class="entryForm__description"></section>
+      <section class="entryForm__mood"></section>
+      <section class="entryForm__record-button"></section>
+      <article class="recorded-entries"></article> -->
+
+      <article id="entries"></article>
+    </main>
+    <footer>
+      <article class="footer">
+        <div class="footer__name"></div>
+        <div class="footer__github-link"></div>
+        <div class="footer__copyright"></div>
+      </article>
+    </footer>
+    <script type="module" src="./scripts/main.js"></script>
+  </body>
+</html>
