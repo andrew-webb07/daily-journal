@@ -1,5 +1,7 @@
 import {Entries} from "./Entries.js"
-import {JournalForm} from"./JournalForm.js"
+import {getEntries} from "./database.js"
+
+import {JournalForm} from "./JournalForm.js"
 
 export const DailyJournal = () => {
     return `

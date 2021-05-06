@@ -5,6 +5,7 @@
 */
 import {getJournalEntries} from "./database.js"
 
+
 export const Entries = () => {
     const entries = getJournalEntries()
     let allEntriesAsHTML = ""

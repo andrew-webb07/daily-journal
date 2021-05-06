@@ -7,29 +7,7 @@
  */
 
 const database = {
-    "entries": [
-        {
-            id: 1,
-            date: "07/24/2025",
-            concept: "HTML & CSS",
-            entry: "We talked about HTML components and how to make grid layouts with Flexbox in CSS.",
-            mood: "Ok"
-        },
-        {
-            id: 2,
-            date: "04/16/2021",
-            concept: "For Loops",
-            entry: "We went through objects and how to loop through them. We learned about key-value pairs and proper syntax for them. We also delved into using for loops in functions",
-            mood: "motivated"
-        },
-        {
-            id: 3,
-            date: "04/20/2021",
-            concept: "JavaScript Functions and Scope",
-            entry: "I went through the remainder problems in the muscle memory work for functions. I then finished the scope problems. I then started the Daily-Journal project.",
-            mood: "tired",
-        }
-    ]
+    entries: []
 }
 
 /*
@@ -39,4 +17,12 @@ const database = {
 export const getJournalEntries = () => {
     const copyOfData = [...database.entries]
     return copyOfData
+}
+
+export const getEntries = () => {
+    return fetch("http://localhost:8088/entries") // Fetch from the API
+        .then(entries => entries.json())  // Parse as JSON
+        .then(entries => {
+            return entries.push(database.entries)// What should happen when we finally have the array?
+        })
 }
