@@ -1,4 +1,4 @@
-const JournalForm = () => {
+export const JournalForm = () => {
     return `
     <form class="entryForm">
     <!-- Date entry -->
