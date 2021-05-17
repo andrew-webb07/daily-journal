@@ -39,7 +39,7 @@ fetch("http://localhost:8088/entries", {
     headers: {
         "Content-Type": "application/json"
     },
-    body: JSON.stringify(newJournalEntry)
+    body: JSON.stringify(entryObject)
 })
     .then(
         (response) => {

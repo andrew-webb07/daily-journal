@@ -7,10 +7,10 @@ container.addEventListener("click", (changeEvent) => {
     const userDate = document.querySelector("input[name='entryDate']").value
     const userConcept = document.querySelector("input[name='entryConcepts']").value
     const userJournalEntry = document.querySelector("input[name='entryJournal']").value
-    const userMood = document.querySelector("input[select='entryMood']").value
+    const userMood = document.querySelector(".entryMood").value
 
     const dataToSendToAPI = {
-      date: userDate,
+      date: new Date(userDate).toLocaleDateString(),
       concept: userConcept,
       journalEntry: userJournalEntry,
       mood: userMood
@@ -45,7 +45,7 @@ export const JournalForm = () => {
     <!-- Your overall mood for the day -->
     <fieldset class="entryForm__column">
         <label for="entryMood">Mood for the day</label>
-        <select for="entryMood">
+        <select class="entryMood" for="entryMood">
             <option value="happy">happy</option>
             <option value="sad">sad</option>
             <option value="frustrated">frustrated</option>
