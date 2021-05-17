@@ -1,3 +1,29 @@
+import {saveJournalEntry} from "./database.js"
+
+const container = document.querySelector("#entries")
+
+container.addEventListener("click", (changeEvent) => {
+  if(changeEvent.target.id === "submitButton") {
+    const userDate = document.querySelector("input[name='entryDate']").value
+    const userConcept = document.querySelector("input[name='entryConcepts']").value
+    const userJournalEntry = document.querySelector("input[name='entryJournal']").value
+    const userMood = document.querySelector("input[select='entryMood']").value
+
+    const dataToSendToAPI = {
+      date: userDate,
+      concept: userConcept,
+      journalEntry: userJournalEntry,
+      mood: userMood
+    }
+
+    saveJournalEntry(dataToSendToAPI)
+
+  }
+})
+
+// maybe use change event for mood?
+
+
 export const JournalForm = () => {
     return `
     <form class="entryForm">
@@ -30,7 +56,7 @@ export const JournalForm = () => {
         </select>
     </fieldset>
     <!-- Button that stores Journal Entry -->
-        <button for="entryRecord">Record Journal Entry</button>
+        <button for="entryRecord" id="submitButton">Record Journal Entry</button>
   </form>
     `
 }

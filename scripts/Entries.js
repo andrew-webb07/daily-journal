@@ -3,11 +3,11 @@
     of the data? Import it on the following line of code
     and then invoke it on the third line of code.
 */
-import {getJournalEntries} from "./database.js"
+import {getEntries} from "./database.js"
 
 
 export const Entries = () => {
-    const entries = getJournalEntries()
+    const entries = getEntries()
     let allEntriesAsHTML = ""
 
 
@@ -21,3 +21,12 @@ export const Entries = () => {
 
     return allEntriesAsHTML
 }
+
+// ${
+//     entries.map(entry => {
+//         return `
+//         <h2>${entry.concept}</h2>
+//            <div>${entry.entry}</div>
+//            <div>${entry.date}</div>`
+//     }).join("")
+// }
