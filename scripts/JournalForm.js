@@ -1,4 +1,4 @@
-import {saveJournalEntry} from "./database.js"
+import {saveJournalEntry, getMoods} from "./database.js"
 
 const container = document.querySelector("#entries")
 
@@ -9,11 +9,21 @@ container.addEventListener("click", (changeEvent) => {
     const userJournalEntry = document.querySelector("input[name='entryJournal']").value
     const userMood = document.querySelector(".entryMood").value
 
+    const userMoodInt = parseInt(userMood)
+
+    const moods = getMoods()
+
+    const foundMood = moods.find(mood => mood.id === userMoodInt)
+
     const dataToSendToAPI = {
       date: new Date(userDate).toLocaleDateString(),
       concept: userConcept,
       journalEntry: userJournalEntry,
-      mood: userMood
+      moodId: parseInt(userMood),
+      mood: {
+        id: foundMood.id,
+        label: foundMood.label
+      }
     }
 
     saveJournalEntry(dataToSendToAPI)
@@ -25,6 +35,9 @@ container.addEventListener("click", (changeEvent) => {
 
 
 export const JournalForm = () => {
+
+    const moods = getMoods()
+
     return `
     <form class="entryForm">
     <!-- Date entry -->
@@ -46,13 +59,9 @@ export const JournalForm = () => {
     <fieldset class="entryForm__column">
         <label for="entryMood">Mood for the day</label>
         <select class="entryMood" for="entryMood">
-            <option value="happy">happy</option>
-            <option value="sad">sad</option>
-            <option value="frustrated">frustrated</option>
-            <option value="confused">confused</option>
-            <option value="tired">tired</option>
-            <option value="motivated">motivated</option>
-            <option value="ok">ok</option>
+            ${moods.map(mood => {
+              return `<option value="${mood.id}">${mood.label}</option>`
+            }).join("")}
         </select>
     </fieldset>
     <!-- Button that stores Journal Entry -->

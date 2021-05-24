@@ -11,22 +11,13 @@ export const Entries = () => {
     let allEntriesAsHTML = ""
 
 
-    for (const entry of entries) {
-        allEntriesAsHTML += `
-           <h2>${entry.concept}</h2>
+    allEntriesAsHTML += entries.map(entry => {
+        return `
+        <h2>${entry.concept}</h2>
            <div>${entry.journalEntry}</div>
            <div>${entry.date}</div>
-        `
-    }
+           <div>${entry.mood.label}</div>`
+    }).join("")
 
     return allEntriesAsHTML
 }
-
-// ${
-//     entries.map(entry => {
-//         return `
-//         <h2>${entry.concept}</h2>
-//            <div>${entry.entry}</div>
-//            <div>${entry.date}</div>`
-//     }).join("")
-// }
