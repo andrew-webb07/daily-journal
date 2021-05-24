@@ -1,0 +1,89 @@
+{
+  "entries": [
+    {
+      "id": 1,
+      "date": "07/24/2025",
+      "concept": "HTML & CSS",
+      "journalEntry": "We talked about HTML components and how to make grid layouts with Flexbox in CSS.",
+      "moodId": 7,
+      "mood": {
+        "id": 7,
+        "label": "ok"
+      }
+    },
+    {
+      "id": 2,
+      "date": "04/16/2021",
+      "concept": "For Loops",
+      "journalEntry": "We went through objects and how to loop through them. We learned about key-value pairs and proper syntax for them. We also delved into using for loops in functions",
+      "moodId": 6,
+      "mood": {
+        "id": 6,
+        "label": "motivated"
+      }
+    },
+    {
+      "id": 3,
+      "date": "04/20/2021",
+      "concept": "JavaScript Functions and Scope",
+      "journalEntry": "I went through the remainder problems in the muscle memory work for functions. I then finished the scope problems. I then started the Daily-Journal project.",
+      "moodId": 5,
+      "mood": {
+        "id": 5,
+        "label": "tired"
+      }
+    },
+    {
+      "date": "5/16/2021",
+      "concept": "Sort Method",
+      "journalEntry": "I learned about sorting orders on the DOM.",
+      "moodId": 1,
+      "id": 4,
+      "mood": {
+        "id": 4,
+        "label": "confused"
+      }
+    },
+    {
+      "date": "5/23/2021",
+      "concept": "Worked on Giffygram",
+      "journalEntry": "I helped sort the messages inbox into read or unread",
+      "moodId": 6,
+      "mood": {
+        "id": 6,
+        "label": "motivated"
+      },
+      "id": 5
+    }
+  ],
+  "moods": [
+    {
+      "id": 1,
+      "label": "happy"
+    },
+    {
+      "id": 2,
+      "label": "sad"
+    },
+    {
+      "id": 3,
+      "label": "frustrated"
+    },
+    {
+      "id": 4,
+      "label": "confused"
+    },
+    {
+      "id": 5,
+      "label": "tired"
+    },
+    {
+      "id": 6,
+      "label": "motivated"
+    },
+    {
+      "id": 7,
+      "label": "ok"
+    }
+  ]
+}

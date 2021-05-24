@@ -7,7 +7,8 @@
  */
 
 const database = {
-   entries: []
+   entries: [],
+   moods: []
 }
 
 /*
@@ -18,7 +19,7 @@ const database = {
 const container = document.querySelector("#entries")
 
 export const fetchEntries = () => {
-    return fetch("http://localhost:8088/entries") // Fetch from the API
+    return fetch("http://localhost:8088/entries?embed=mood") // Fetch from the API
         .then(response => response.json())  // Parse as JSON
         .then(
             (data) => {
@@ -27,6 +28,17 @@ export const fetchEntries = () => {
     )
 }
 
+export const fetchMoods = () => {
+    return fetch("http://localhost:8088/moods")
+    .then(response => response.json())
+    .then((moodData) => {
+        database.moods = moodData
+    })
+}
+
+export const getMoods = () => {
+    return [...database.moods]
+}
 
 export const getEntries = () => {
     return [...database.entries]
