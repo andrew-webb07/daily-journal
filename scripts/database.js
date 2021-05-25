@@ -46,7 +46,7 @@ export const getEntries = () => {
 
 export const saveJournalEntry = (entryObject) => {
     // Use `fetch` with the POST method to add your entry to your API
-fetch("http://localhost:8088/entries", {
+return fetch("http://localhost:8088/entries", {
     method: "POST",
     headers: {
         "Content-Type": "application/json"
@@ -66,3 +66,7 @@ fetch("http://localhost:8088/entries", {
         }
     )
 }
+
+export const deleteJournalEntry = (entryId) => {
+    return fetch(`http://localhost:8088/entries/${entryId}`, {method: "DELETE"})
+    .then(() => container.dispatchEvent(new CustomEvent("stateChanged")))}
