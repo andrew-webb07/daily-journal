@@ -34,17 +34,6 @@
       }
     },
     {
-      "date": "5/16/2021",
-      "concept": "Sort Method",
-      "journalEntry": "I learned about sorting orders on the DOM.",
-      "moodId": 1,
-      "id": 4,
-      "mood": {
-        "id": 4,
-        "label": "confused"
-      }
-    },
-    {
       "date": "5/23/2021",
       "concept": "Worked on Giffygram",
       "journalEntry": "I helped sort the messages inbox into read or unread",
